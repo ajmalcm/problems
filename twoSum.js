@@ -12,25 +12,24 @@ const twoSum=(nums,target)=>{
     return [];
 }
 
-const nums=[2,3,5,6,7];
+const nums=[2,3,5,6,7,4];
 // console.log(twoSum(nums,8));
 
 
 //best case  O(n); since only one loop
 
 const twoSum2=(nums,target)=>{
-    let seen=new Map();
+    const seen=new Map();
     for(let i=0;i<nums.length;i++)
     {
         let compliment=target-nums[i];
-
         if(seen.has(compliment))
-            return [seen.get(compliment),i];
-        
+            return [seen.get(compliment),i]
+        else
         seen.set(nums[i],i);
     }
     return [];
 }
 
-console.log(twoSum2(nums,5))
+console.log(twoSum2(nums,6))
 
